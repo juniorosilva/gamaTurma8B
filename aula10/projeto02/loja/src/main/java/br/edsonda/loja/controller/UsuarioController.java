@@ -50,6 +50,7 @@ public class UsuarioController {
     @GetMapping("/usuarios")
     public List<Usuario> buscarUsuarios() {
 
+        //List<Usuario> lista = (List<Usuario>) dao.findAll();
         List<Usuario> lista = (List<Usuario>) dao.findAll();
 
         return null;
