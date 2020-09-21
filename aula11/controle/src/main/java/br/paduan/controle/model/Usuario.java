@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 
 @Entity
 @Table(name="usuario")
@@ -40,6 +42,7 @@ public class Usuario {
 
 	//Cria relacionamento usuario <> chamado
 	@OneToMany(mappedBy = "usuario")
+	@JsonIgnoreProperties("usuario") //ignora a propriedade usuario para nao ficar buscando infiinitamente
 	private List<Chamado> chamados;
 
 	public int getId() {

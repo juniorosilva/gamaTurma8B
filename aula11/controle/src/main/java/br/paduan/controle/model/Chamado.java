@@ -13,6 +13,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "chamado")
@@ -43,6 +44,7 @@ public class Chamado {
     //Criar relacionamento usuario <> chamado
     @ManyToOne
     @JoinColumn(name = "id_usuario") //nome da coluna na tabela chamado
+    @JsonIgnoreProperties("chamados") //ignora chamados
     private Usuario usuario;
 
     public int getNumChamado() {
